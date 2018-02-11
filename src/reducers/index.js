@@ -1,4 +1,4 @@
-const reducers (state = [], action) => {
+const reducers = (state = [], action) => {
 	return state
 }
 

@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'redux';
+import { Provider } from 'react-redux';
 
 import './index.css';
-import LandingPage from './components/LandingPage.js';
-import registerServiceWorker from './registerServiceWorker';
-import store from './store'
+import App from './App.js';
+import store from './store.js'
 
 
 ReactDOM.render(
 	<Provider store={store}>
-		<LandingPage />
+		<App />
 	</Provider>,
-	document.getElementById('root'));
-registerServiceWorker();
+document.getElementById('root'));
