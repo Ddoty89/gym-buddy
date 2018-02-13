@@ -7,7 +7,11 @@ export default function NavBar(props) {
 	return (
 		<div className='nav'>
 			<Link to='/'> 
-				<p>Home</p>
+				<h3>Home</h3>
+			</Link>
+
+			<Link to='/main'>
+				<h3>Search Exercises</h3>
 			</Link>
 
 		</div>
