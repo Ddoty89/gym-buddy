@@ -7,12 +7,20 @@ export default function NavBar(props) {
 	return (
 		<div className='nav'>
 			<Link to='/'> 
-				<h3>Home</h3>
+				<h3 className='link'>Home</h3>
 			</Link>
 
-			<Link to='/main'>
-				<h3>Search Exercises</h3>
+			<Link to='/main/muscle'>
+				<h3 className='link'>Search Muscle Groups</h3>
 			</Link>
+
+			<Link to='/main/equipment'>
+				<h3 className='link'>Search Equipment</h3>
+			</Link>
+
+			<Link to='/main/stats/:username'>
+				<h3 className='link'>Personal Stats</h3>
+			</Link>			
 
 		</div>
 	)

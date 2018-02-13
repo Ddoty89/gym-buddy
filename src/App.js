@@ -6,7 +6,9 @@ import {
 
 import LandingPage from './components/LandingPage'
 import NavBar from './components/NavBar'
-import RoutineDeveloper from './components/RoutineDeveloper'
+import SearchMusculeGroup from './components/SearchMusculeGroup'
+import SearchEquipment from './components/SearchEquipment'
+import PersonalStats from './components/PersonalStats'
 
 export default function App(props) {
 	return (
@@ -14,7 +16,9 @@ export default function App(props) {
 			<div>
 				<NavBar />
 				<Route exact path='/' component={LandingPage} />
-				<Route exact path='/main' component={RoutineDeveloper} />	
+				<Route exact path='/main/muscle' component={SearchMusculeGroup} />
+				<Route exact path='/main/equipment' component={SearchEquipment} />
+				<Route exact path='/main/stats/:username' component={PersonalStats} />
 			</div>
 		</Router>
 	)
