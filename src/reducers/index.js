@@ -3,7 +3,7 @@ const initialState = {
 	data: []
 }
 
-const loginReducer 
+// const loginReducer 
 
 
 const reducers = (state = initialState, action) => {

@@ -5,14 +5,14 @@ export const login = (user) => {
 	user
 }
 
-const requestData = () => ({
-	type: 'REQUEST_DATA'
-})
+// const requestData = () => ({
+// 	type: 'REQUEST_DATA'
+// })
 
-const recieveData = (data) => ({
-	type: 'RECIEVE_DATA',
-	data
-})
+// const recieveData = (data) => ({
+// 	type: 'RECIEVE_DATA',
+// 	data
+// })
 
 export const fetchUserProfile = () => dispatch => {
     fetch(`${API_BASE_URL}/users/`)
