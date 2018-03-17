@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../actions'
+import { fetchUser } from '../actions'
 
-const LoginInput = ({login}) => (
+const LoginInput = ({user}) => (
 	<form onSubmit = {e => {
 		e.preventDefault();
 		let loginInput = e.target.logUser.value;
+		user()
 		localStorage.setItem('username',loginInput);
 		e.target.logUser.value = '';
 	}}>
@@ -14,11 +15,11 @@ const LoginInput = ({login}) => (
 		<button>Login</button>
 		<p>OR</p>
 	</form>
-)
+);
 
 const mapDispatchToProps = (dispatch) => ({
-	login: (text) => dispatch(login(text))
+	user: () => dispatch(fetchUser())
 })
 
 
-export default connect(null, mapDispatchToProps)(LoginInput );
+export default connect(null, mapDispatchToProps)(LoginInput);

@@ -1,9 +1,9 @@
 const {API_BASE_URL} = require('../config');
 
-export const login = (user) => {
+export const login = (user) => ({
 	type: 'LOGIN',
 	user
-}
+})
 
 // const requestData = () => ({
 // 	type: 'REQUEST_DATA'
@@ -14,11 +14,20 @@ export const login = (user) => {
 // 	data
 // })
 
-export const fetchUserProfile = () => dispatch => {
+export const fetchUser = () => {
+	return dispatch => {
+		// dispatch(recieveData())
     fetch(`${API_BASE_URL}/users/`)
-    .then(userProfile => userProfile.json())
-    .then(json => console.log(json))
+    .then(users => users.json())
+    .then(json => json.map(
+    	user => {
+    		console.log(user)
+    		}
+      )
+    )
+
     //     dispatch(fetchUserProfileSuccess(userProfile));
     // }).catch(err => dispatch(fetchUserProfileError(err)));
     .catch(err => console.log(err))
+  }
 };

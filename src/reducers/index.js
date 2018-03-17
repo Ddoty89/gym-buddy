@@ -1,19 +1,11 @@
-const initialState = {
-	loading: 'false',
-	data: []
-}
+import { combineReducers } from 'redux';
 
-// const loginReducer 
+import userReducer from './userReducer'
+import loginReducer from './loginReducer'
 
-
-const reducers = (state = initialState, action) => {
-	if(action.type ===  'REQUEST_DATA') {
-		return {}
-	} 
-	else if(action.type === 'RECIEVE_DATA') {
-		return {}
-	}
-	return state
-}
+const reducers = combineReducers({
+		userReducer,
+		loginReducer
+	})
 
 export default reducers
