@@ -1,14 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
-export default function Register(props) {
+import RegistrationForm from './RegistrationForm'
+
+export function Register(props) {
+
+	if(props.loggedIn) {
+		return <Redirect to='/dashboard' />;
+	}
+
 	return (
 		<div>
-			<input className='firstName' type='text' name='firstName' placeholder='First Name' />
-			<input className='lastName' type='text' name='lastName' placeholder='Last Name' />
-			<input className='regUser' type='text' name='regUser' placeholder='Username' />
-			<input className='regPass' type='password' name='regpass' placeholder='Password' />
-			<input className='regEmail' type='email' name='regEmail' placeholder='Email' />
-			<button>Register</button>
+			<h2>Register for an account with Gym Buddy</h2>
+			<RegistrationForm />
+			<Link to='/'>Login</Link>
 		</div>
-	)
-}
+	);
+};
+
+const mapStatetoProps = state => ({
+	loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStatetoProps)(Register);

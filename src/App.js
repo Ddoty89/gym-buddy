@@ -9,6 +9,7 @@ import NavBar from './components/NavBar'
 import SearchMusculeGroup from './components/SearchMusculeGroup'
 import SearchEquipment from './components/SearchEquipment'
 import PersonalStats from './components/PersonalStats'
+import Register from './components/Register'
 
 export default function App(props) {
 	return (
@@ -16,6 +17,7 @@ export default function App(props) {
 			<div>
 				<NavBar />
 				<Route exact path='/' component={LandingPage} />
+				<Route exact path='/register' component={Register} />
 				<Route exact path='/main/muscle' component={SearchMusculeGroup} />
 				<Route exact path='/main/equipment' component={SearchEquipment} />
 				<Route exact path='/main/stats/:username' component={PersonalStats} />

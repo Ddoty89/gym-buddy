@@ -1,13 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom'
 
-import LoginOrRegister from './LoginOrRegister'
-import Register from './Register'
+import Login from './Login'
 
-export default function LandingPage(props) {
+export function LandingPage(props) {
+	if(props.loggedIn) {
+		return <Redirect to='/dashboard' />
+	}
+
 	return (
-		<div>
-			<LoginOrRegister />
-			<Register />
+		<div className='landingPage'>
+			<h1>Welcome to gym buddy</h1>
+			<Login />
+			<Link to='/register'>Register</Link>
 		</div>
 	)
 }
+
+const mapStateToProps = state => ({
+	loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(landingPage);
