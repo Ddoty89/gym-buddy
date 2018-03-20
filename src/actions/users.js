@@ -1,7 +1,12 @@
 import {SubmissionError} from 'redux-form';
 
-import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './utilities';
+import { API_BASE_URL } from '../config';
+import { normalizeResponseErrors } from './utilities';
+import { saveUsername } from '../local-storage';
+
+const storeUsername = username => {
+    saveUsername(username);
+};
 
 export const registerUser = user => dispatch => {
     return fetch(`${API_BASE_URL}/users`, {
@@ -13,6 +18,7 @@ export const registerUser = user => dispatch => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
+        .then(({username}) => storeUsername(username))
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './NavBar.css'
+import Logout from './Logout';
 
 export default function NavBar(props) {
 	return (
@@ -20,7 +21,8 @@ export default function NavBar(props) {
 
 			<Link to='/main/stats/:username'>
 				<h3 className='link'>Personal Stats</h3>
-			</Link>			
+			</Link>	
+			
 
 		</div>
 	)
