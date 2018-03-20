@@ -1,19 +1,46 @@
 import React from 'react';
-import {
-	BrowserRouter as Router,
-	Route
-	} from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import LandingPage from './components/LandingPage'
-import NavBar from './components/NavBar'
-import SearchMusculeGroup from './components/SearchMusculeGroup'
-import SearchEquipment from './components/SearchEquipment'
-import PersonalStats from './components/PersonalStats'
-import Register from './components/Register'
+import LandingPage from './components/LandingPage';
+import NavBar from './components/NavBar';
+import SearchMusculeGroup from './components/SearchMusculeGroup';
+import SearchEquipment from './components/SearchEquipment';
+import PersonalStats from './components/PersonalStats';
+import Register from './components/Register';
+import { refreshAuthToken } from './actions/auth';
 
-export default function App(props) {
-	return (
-		<Router>
+export class App extends React.Component {
+	componentDidUpdate(prevProps) {
+		if(!prevProps.loggedIn && this.props.loggedIn) {
+			this.startPeriodicRefresh();
+		} else if (prevProps.loggedIn && !this.props.loggedIn) {
+			this.startPeriodicRefresh();
+		}
+	}
+
+	componentWillUnmount() {
+        this.stopPeriodicRefresh();
+    }
+
+    startPeriodicRefresh() {
+        this.refreshInterval = setInterval(
+            () => this.props.dispatch(refreshAuthToken()),
+            60 * 60 * 1000
+        );
+    }
+
+    stopPeriodicRefresh() {
+        if (!this.refreshInterval) {
+            return;
+        }
+
+        clearInterval(this.refreshInterval);
+    }
+
+
+	render() {	
+		return (
 			<div>
 				<NavBar />
 				<Route exact path='/' component={LandingPage} />
@@ -22,6 +49,14 @@ export default function App(props) {
 				<Route exact path='/main/equipment' component={SearchEquipment} />
 				<Route exact path='/main/stats/:username' component={PersonalStats} />
 			</div>
-		</Router>
-	)
+	
+		)
+	}
 }
+
+const mapStateToProps = state => ({
+    hasAuthToken: state.auth.authToken !== null,
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default withRouter(connect(mapStateToProps)(App));

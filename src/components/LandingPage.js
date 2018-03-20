@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom'
 
+import './LandingPage.css';
 import Login from './Login'
 
 export function LandingPage(props) {
@@ -11,9 +12,9 @@ export function LandingPage(props) {
 
 	return (
 		<div className='landingPage'>
-			<h1>Welcome to gym buddy</h1>
+			<h1 className='header'>Welcome to Gym Buddy</h1>
 			<Login />
-			<Link to='/register'>Register</Link>
+			<Link className='regButton' to='/register'>Register</Link>
 		</div>
 	)
 }
@@ -22,4 +23,4 @@ const mapStateToProps = state => ({
 	loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(landingPage);
+export default connect(mapStateToProps)(LandingPage);
