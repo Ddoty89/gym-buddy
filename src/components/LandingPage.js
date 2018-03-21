@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom'
 
 import './LandingPage.css';
-import Login from './Login'
+import LoginForm from './LoginForm'
 
-export function LandingPage(props) {
+function LandingPage(props)  {
 	if(props.loggedIn) {
 		return <Redirect to='/dashboard' />
 	}
@@ -13,7 +13,7 @@ export function LandingPage(props) {
 	return (
 		<div className='landingPage'>
 			<h1 className='header'>Welcome to Gym Buddy</h1>
-			<Login />
+			<LoginForm />
 			<Link className='regButton' to='/register'>Register</Link>
 		</div>
 	)

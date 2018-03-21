@@ -1,15 +1,13 @@
 const initialState = {
-	user: {}
+	username: {}
 }
 
-const loginReducer = (state = initialState, action) => {
-	if(action.type === 'LOGIN') {
+export default function loginReducer (state = initialState, action) {
+	if(action.type === 'STORE_USERNAME') {
 		return { 
-			user: action.user 
+			username: action.username 
 		}
 	} else {
 		return state
 	}
 };
-
-export default loginReducer;

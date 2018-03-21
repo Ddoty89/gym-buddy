@@ -3,23 +3,17 @@ import {SubmissionError} from 'redux-form';
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utilities';
 
+export const obtainedStats = stats => ({
+    type: 'OBTAINED_STATS',
+    stats
+})
 
-const storeUsername = username => ({
-    type: 'STORE_USERNAME',
-    username
-});
-
-export const registerUser = user => dispatch => {
-    return fetch(`${API_BASE_URL}/stats/personal-stats`, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
+export const personalStats = () => {
+    return dispatch => {
+    return  fetch(`${API_BASE_URL}/stats/personal-stats/`)
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({username}) => dispatch(storeUsername(username)))
+        .then(({stats}) => dispatch(obtainedStats(stats)))
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
@@ -30,4 +24,5 @@ export const registerUser = user => dispatch => {
                 );
             }
         });
+    }
 };

@@ -5,7 +5,9 @@ import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
 export class LoginForm extends React.Component {
+
     onSubmit(values) {
+        console.log(values)
         return this.props.dispatch(login(values.username, values.password));
     }
 
@@ -21,12 +23,13 @@ export class LoginForm extends React.Component {
         return (
             <form
                 className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
+                onSubmit={
+                    this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
                 {error}
                 <label htmlFor="username">Username</label>
-                <Field
+                <Field 
                     component={Input}
                     type="text"
                     name="username"
