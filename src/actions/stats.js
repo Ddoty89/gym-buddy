@@ -14,7 +14,7 @@ export const personalStats = () => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(({stats}) => dispatch(obtainedStats(stats)))
-        .catch(err => {
+        .catch(err => { 
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
                 return Promise.reject(

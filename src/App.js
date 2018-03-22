@@ -45,9 +45,9 @@ export class App extends React.Component {
 				<NavBar />
 				<Route exact path='/' component={LandingPage} />
 				<Route exact path='/register' component={Register} />
-				<Route exact path='/main/muscle:username' component={SearchMusculeGroup} />
-				<Route exact path='/main/equipment:username' component={SearchEquipment} />
-				<Route exact path='/main/stats/:username' component={PersonalStats} />
+				<Route exact path='/main/muscle' component={SearchMusculeGroup} />
+				<Route exact path='/main/equipment' component={SearchEquipment} />
+				<Route exact path='/main/stats/' component={PersonalStats} />
 			</div>
 	
 		)

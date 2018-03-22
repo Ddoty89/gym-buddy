@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utilities';
 
 
-const storeUsername = username => ({
+export const storeUsername = username => ({
     type: 'STORE_USERNAME',
     username
 });

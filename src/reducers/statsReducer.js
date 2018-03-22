@@ -1,10 +1,11 @@
 const initialState = {
-	stats: {}
+	stats: []
 }
 
 export default function statsReducer(state = initialState, action) {
 	if(action.type === 'OBTAINED_STATS') {
 		return {
+			...state,
 			stats: action.stats
 		}
 	} else {

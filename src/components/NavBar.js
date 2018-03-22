@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
 
 import './NavBar.css'
 
-export default function NavBar(props) {
+function NavBar(props) {
 	return (
 		<div className='nav'>
 			<Link to='/'> 
@@ -18,7 +19,7 @@ export default function NavBar(props) {
 				<h3 className='link'>Search Equipment</h3>
 			</Link>
 
-			<Link to='/main/stats/:username'>
+			<Link to='/main/stats'>
 				<h3 className='link'>Personal Stats</h3>
 			</Link>	
 			
@@ -29,3 +30,5 @@ export default function NavBar(props) {
 		</div>
 	)
 }
+
+export default connect()(NavBar)
