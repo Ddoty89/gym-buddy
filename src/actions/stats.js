@@ -5,7 +5,7 @@ import { normalizeResponseErrors } from './utilities';
 
 export const obtainedStats = stats => ({
     type: 'OBTAINED_STATS',
-    stats
+    stats 
 })
 
 export const personalStats = () => {

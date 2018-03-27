@@ -2,12 +2,13 @@ const initialState = {
 	stats: []
 }
 
+let username = localStorage.getItem('username');
+
 export default function statsReducer(state = initialState, action) {
 	if(action.type === 'OBTAINED_STATS') {
 		return {
-			...state,
-			stats: action.stats
-		}
+			stats: action.stats.filter(item => item.username === username)
+		}	
 	} else {
 		return state
 	}

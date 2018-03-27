@@ -8,9 +8,6 @@ class PersonalStats extends React.Component {
 		this.props.dispatch(personalStats())	
 	}
 
-	const list = {this.props.stats}
-	console.log(list)
-
 	render() {
 		return (
 			<div>
@@ -20,6 +17,23 @@ class PersonalStats extends React.Component {
 
 				<label htmlFor='height'>Input height to calculate standarized BMI</label>
 				<input className='height' id='height' type='text' name='height' placeholder='Height' />
+
+				{this.props.stats.map((item, index) => (
+					<div key={index} className='statsList'> 
+						<br/>
+						{
+						<ul>
+							<li>Height: {item.height}</li>
+							<li>Weight: {item.weight}</li>
+							<li>Mile time: {item.mileTime}</li>
+							<li>Goals: {item.goals}</li>							
+							<li>Gender: {item.gender}</li>
+							<li>Notes: {item.notes}</li>
+						</ul>
+						}
+						<br/>
+					</div>
+				))}
 
 			</div>
 		)
