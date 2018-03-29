@@ -1,18 +1,15 @@
 const initialState = {
-	loading: 'false',
-	data: []
+	user: {}
 }
 
-const userReducer = (state = initialState, action) => {
-	if(action.type ===  'REQUEST_DATA') {
-		return {
-			loading: 'true'
+let username = localStorage.getItem('username');
+
+export default function userReducer (state = initialState, action) {
+	if(action.type === 'STORE_USER') {
+		return { 
+			user: action.user.filter(item => item.username === username)
 		}
-	} 
-	else if(action.type === 'RECIEVE_DATA') {
-		return {}
+	} else {
+		return state
 	}
-	return state
-}
-
-export default userReducer
+};

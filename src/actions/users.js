@@ -3,10 +3,9 @@ import {SubmissionError} from 'redux-form';
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utilities';
 
-
-export const storeUsername = username => ({
-    type: 'STORE_USERNAME',
-    username
+export const storeUser = user => ({
+    type: 'STORE_USER',
+    user
 });
 
 export const registerUser = user => dispatch => {
@@ -19,7 +18,6 @@ export const registerUser = user => dispatch => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({username}) => dispatch(storeUsername(username)))
         .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
@@ -31,3 +29,28 @@ export const registerUser = user => dispatch => {
             }
         });
 };
+
+export const findUser = () => {
+    return dispatch => {
+        return fetch(`${API_BASE_URL}/users/`)
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .then(json => dispatch(storeUser(json)))
+            .catch(err => { 
+            const {reason, message, location} = err;
+            if (reason === 'ValidationError') {
+                return Promise.reject(
+                    new SubmissionError({
+                        [location]: message
+                    })
+                );
+            }
+        });   
+    }
+}
+
+
+
+
+
+
