@@ -19,21 +19,25 @@ export class EquipmentForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="equipment">Equipment</label>
                 <div>
-                    <Field component='select' type="select" name="equipment">
-                        <option></option>
-                        <option>Barbell</option>
-                        <option>Bench</option>
-                        <option>Dumbell</option>
-                        <option>Gym Mat</option>
-                        <option>Incline Bench</option>
-                        <option>Pull-up Bar</option>
-                    </Field>
+                    <label htmlFor="equipment">Equipment</label>
+                    <div>
+                        <Field component='select' type="select" name="equipment" onChange={(value) => console.log(value.target.value)}>
+                            <option></option>
+                            <option value='barbell'>Barbell</option>
+                            <option value='bench'>Bench</option>
+                            <option value='dumbell'>Dumbell</option>
+                            <option value='gymMat'>Gym Mat</option>
+                            <option value='inclineBench'>Incline Bench</option>
+                            <option value='pullUpBar'>Pull-up Bar</option>
+                        </Field>
+                    </div>
                 </div>
                 <br/>
 
-                <label htmlFor="muscles">Muscles:<span> muscles</span></label> <br/><br/>
+                <label htmlFor="muscles">Muscles: <span
+
+                >muscles</span></label> <br/><br/>
 
                 <label htmlFor="sets">Sets</label>
                 <Field component={Input} type="text" name="sets" />
@@ -50,7 +54,7 @@ export class EquipmentForm extends React.Component {
                 <button
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
-                    Add Workout
+                    Add Exercise
                 </button>
             </form>
         );
