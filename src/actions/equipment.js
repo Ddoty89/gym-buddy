@@ -27,6 +27,11 @@ import { normalizeResponseErrors } from './utilities';
 //     }
 // }
 
+export const workoutStore = equipment => ({
+    type: 'WORKOUT_STORE',
+    equipment
+})
+
 export const addEquipment = ({equipment, muscle, sets, repetitions, weight, notes}) => dispatch => {
     let username = localStorage.getItem('username')
     fetch(`${API_BASE_URL}/workouts/saved`, {
@@ -58,3 +63,4 @@ export const addEquipment = ({equipment, muscle, sets, repetitions, weight, note
         }
     });
 }
+

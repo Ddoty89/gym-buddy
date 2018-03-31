@@ -3,8 +3,22 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
 
 import { addEquipment } from '../actions/equipment'
+import EquipmentFormSelect from './EquipmentFormSelect'
 
 export class EquipmentForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ''
+        }
+        console.log(this.state.value)
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(e) {
+        this.setState({value: e.target.value})
+    }
+
     onSubmit(values) {
         const {equipment, muscle, sets, repetitions, weight, notes} = values;
         const user = {equipment, muscle, sets, repetitions, weight, notes};
@@ -19,25 +33,8 @@ export class EquipmentForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <div>
-                    <label htmlFor="equipment">Equipment</label>
-                    <div>
-                        <Field component='select' type="select" name="equipment" onChange={(value) => console.log(value.target.value)}>
-                            <option></option>
-                            <option value='barbell'>Barbell</option>
-                            <option value='bench'>Bench</option>
-                            <option value='dumbell'>Dumbell</option>
-                            <option value='gymMat'>Gym Mat</option>
-                            <option value='inclineBench'>Incline Bench</option>
-                            <option value='pullUpBar'>Pull-up Bar</option>
-                        </Field>
-                    </div>
-                </div>
-                <br/>
 
-                <label htmlFor="muscles">Muscles: <span
-
-                >muscles</span></label> <br/><br/>
+                <EquipmentFormSelect value={this.state.value} onChange={this.handleChange} />
 
                 <label htmlFor="sets">Sets</label>
                 <Field component={Input} type="text" name="sets" />
