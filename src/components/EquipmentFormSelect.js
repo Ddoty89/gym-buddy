@@ -2,38 +2,43 @@ import React from 'react';
 import {Field} from 'redux-form';
 import { connect } from 'react-redux';
 
-import {workoutStore} from '../actions/equipment'
+import {equipmentSelection} from '../actions/equipment'
 
-const EquipmentFormSelect = ({equipment, workoutStore}) => (
+const EquipmentFormSelect = ({equipment, equipmentSelection, equipmentOptions, equipmentSelected}) => (
 	<div>
         <label htmlFor="equipment">Equipment</label>
         <div>
             <Field component='select' type="select" name="equipment" 
             onChange={(value) => {
-				equipment(value.target.value)
+                let selection = value.target.value
+				equipmentSelection(selection)
 			}}>
 
                 <option></option>
-                <option>Barbell</option>
-                <option>Bench</option>
-                <option>Dumbell</option>
-                <option>Gym Mat</option>
-                <option>Incline Bench</option>
+                <option>Barbell Squats</option>
+                <option>Bench Press</option>
+                <option>Dumbell Curl</option>
+                <option>Gym Mat - Crunch</option>
+                <option>Incline Bench Press</option>
                 <option>Pull-up Bar</option>
             </Field>
         </div>
         <br/>
 
-    <label htmlFor="muscles">Muscles: <span>muscles</span></label> <br/><br/>
+    <label htmlFor="muscles">Muscles: {equipmentOptions[equipmentSelected]}</label> <br/><br/>
 
     </div>
     
 );
 
-
-const mapDispatchToProps = dispatch => ({
-	equipment: (equipment) => dispatch(workoutStore(equipment))
+const mapStateToProps = state => ({
+    equipmentOptions: state.reducers.equipmentOptions.workedMuscles || '',
+    equipmentSelected: state.reducers.equipmentSelector.equipment || ''
 })
 
-export default connect(null, mapDispatchToProps)(EquipmentFormSelect);
+const mapDispatchToProps = dispatch => ({
+	equipmentSelection: (equipment) => dispatch(equipmentSelection(equipment))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(EquipmentFormSelect);
 

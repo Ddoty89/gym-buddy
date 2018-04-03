@@ -2,28 +2,19 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
 
-import { addEquipment } from '../actions/equipment'
+import { equipment } from '../actions/equipment'
 import EquipmentFormSelect from './EquipmentFormSelect'
 
 export class EquipmentForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ''
-        }
-        console.log(this.state.value)
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    handleChange(e) {
-        this.setState({value: e.target.value})
+    componentDidMount() {
+        this.props.dispatch(equipment())
     }
 
     onSubmit(values) {
-        const {equipment, muscle, sets, repetitions, weight, notes} = values;
-        const user = {equipment, muscle, sets, repetitions, weight, notes};
-        return this.props
-            .dispatch(addEquipment(user))
+        // const {equipment, muscle, sets, repetitions, weight, notes} = values;
+        // const user = {equipment, muscle, sets, repetitions, weight, notes};
+        // return this.props
+            // .dispatch(equipment())
     }
 
     render() {
@@ -34,7 +25,7 @@ export class EquipmentForm extends React.Component {
                     this.onSubmit(values)
                 )}>
 
-                <EquipmentFormSelect value={this.state.value} onChange={this.handleChange} />
+                <EquipmentFormSelect />
 
                 <label htmlFor="sets">Sets</label>
                 <Field component={Input} type="text" name="sets" />

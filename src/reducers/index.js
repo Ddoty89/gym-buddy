@@ -1,17 +1,19 @@
 import { combineReducers } from 'redux';
 
-import authReducer from './auth'
+import auth from './auth'
 import protectedReducer  from './protected'
-import userReducer from './userReducer'
-import statsReducer from './statsReducer'
-import equipmentReducer from './equipmentReducer'
+import user from './user'
+import stats from './stats'
+import equipmentSelector from './equipmentSelector'
+import equipmentOptions from './equipmentOptions'
 
 const reducers = combineReducers({
-		authReducer,
+		auth,
 		protectedReducer,
-		userReducer,
-		statsReducer,
-		equipmentReducer
+		user,
+		stats,
+		equipmentSelector,
+		equipmentOptions
 	})
 
 export default reducers
