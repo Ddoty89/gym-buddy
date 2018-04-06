@@ -8,7 +8,9 @@ import SearchMusculeGroup from './components/SearchMusculeGroup';
 import SearchEquipment from './components/SearchEquipment';
 import PersonalStats from './components/PersonalStats';
 import Register from './components/Register';
+import SavedWorkouts from './components/SavedWorkouts'
 import { refreshAuthToken } from './actions/auth';
+
 
 export class App extends React.Component {
 	componentDidUpdate(prevProps) {
@@ -48,6 +50,7 @@ export class App extends React.Component {
 				<Route exact path='/main/muscle' component={SearchMusculeGroup} />
 				<Route exact path='/main/equipment' component={SearchEquipment} />
 				<Route exact path='/main/stats/' component={PersonalStats} />
+				<Route exact path='/saved-workouts' component={SavedWorkouts} />
 			</div>
 	
 		)

@@ -7,6 +7,7 @@ import stats from './stats'
 import equipmentOptions from './equipmentOptions'
 import storeExercise from './storeExercise'
 import muscleGroups from './muscleGroups'
+import savedWorkouts from './savedWorkouts'
 
 const reducers = combineReducers({
 		auth,
@@ -15,7 +16,8 @@ const reducers = combineReducers({
 		stats,
 		equipmentOptions,
 		storeExercise,
-		muscleGroups
+		muscleGroups,
+		savedWorkouts
 	})
 
 export default reducers

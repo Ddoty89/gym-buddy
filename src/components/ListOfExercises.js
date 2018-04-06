@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addWorkout } from '../actions/equipment'
 
@@ -29,6 +30,14 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     <li>{exercises.notes}</li>
                 </ul>
             ))}
+
+            <div>
+                <Link to='/saved-workouts'>
+                    <h5 className='link'>Your saved workouts</h5>
+                </Link>
+
+            </div>
+
         </div>
     )
 }
