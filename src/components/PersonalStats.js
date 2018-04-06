@@ -6,10 +6,6 @@ import User from './User';
 import StatsList from './StatsList'
 
 class PersonalStats extends React.Component {
-	componentDidMount() {
-
-	}
-
 	render() {
 		return (
 			<div>

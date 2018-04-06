@@ -8,6 +8,14 @@ export const equipmentUsed = workedMuscles => ({
     workedMuscles
 })
 
+export const storeExercise = ({equipment, sets, repetitions, weight, notes}) => ({
+    type: 'STORE_EXERCISE',
+    equipment, 
+    sets, 
+    repetitions, 
+    weight, 
+    notes
+})
 
 export const equipment = () => {
     return dispatch => {
@@ -28,40 +36,35 @@ export const equipment = () => {
     }
 }
 
-export const equipmentSelection = equipment => ({
-    type: 'WORKOUT_STORE',
-    equipment
-})
 
-// export const addEquipment = ({equipment, muscle, sets, repetitions, weight, notes}) => dispatch => {
-//     let username = localStorage.getItem('username')
-//     fetch(`${API_BASE_URL}/workouts/saved`, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             username,
-//             equipment, 
-//             muscle, 
-//             sets, 
-//             repetitions, 
-//             weight, 
-//             notes
-//         })
-//     })
-//     .then(res => normalizeResponseErrors(res))
-//     .then(res => res.json())
-//     .then(json => console.log(json))
-//     .catch(err => { 
-//         const {reason, message, location} = err;
-//         if (reason === 'ValidationError') {
-//             return Promise.reject(
-//                 new SubmissionError({
-//                     [location]: message
-//                 })
-//             );
-//         }
-//     });
-// }
+export const addWorkout = (workoutTitle, exerciseList) => {
+    return dispatch => {
+        console.log(workoutTitle, exerciseList)
+        let username = localStorage.getItem('username')
+        fetch(`${API_BASE_URL}/workouts/saved`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                workoutTitle, 
+                exerciseList
+            })
+        })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(err => { 
+            const {reason, message, location} = err;
+            if (reason === 'ValidationError') {
+                return Promise.reject(
+                    new SubmissionError({
+                        [location]: message
+                    })
+                );
+            }
+        });
+    }
+}
 
