@@ -1,9 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-export default function SearchMusculeGroup(props) {
+import MuscleGroupForm from './MuscleGroupForm'
+
+function SearchMusculeGroup(props) {
 	return (
 		<div>
-			<input className='muscules' type='text' name='muscules' placeholder='Enter muscule group or body part' />
+			<MuscleGroupForm />
 		</div>
 	)
 }
+
+export default connect()(SearchMusculeGroup)

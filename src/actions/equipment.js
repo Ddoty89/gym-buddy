@@ -39,7 +39,6 @@ export const equipment = () => {
 
 export const addWorkout = (workoutTitle, exerciseList) => {
     return dispatch => {
-        console.log(workoutTitle, exerciseList)
         let username = localStorage.getItem('username')
         fetch(`${API_BASE_URL}/workouts/saved`, {
             method: 'POST',
@@ -54,7 +53,6 @@ export const addWorkout = (workoutTitle, exerciseList) => {
         })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(json => console.log(json))
         .catch(err => { 
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
