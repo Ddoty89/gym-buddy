@@ -17,9 +17,4 @@ class PersonalStats extends React.Component {
 	}
 }
 
-
-const mapStateToProps = state => ({
-	stats: state.reducers.statsReducer.stats
-})
-
-export default connect(mapStateToProps)(PersonalStats);
+export default connect()(PersonalStats);

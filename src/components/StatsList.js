@@ -31,7 +31,7 @@ class StatsList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	stats: state.reducers.statsReducer.stats
+	stats: state.reducers.stats.stats
 })
 
 export default connect(mapStateToProps)(StatsList)

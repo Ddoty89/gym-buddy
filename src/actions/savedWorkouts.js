@@ -14,7 +14,7 @@ export const fetchWorkouts = () => {
         return fetch(`${API_BASE_URL}/workouts/saved`)
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
-            .then(json => dispatch(savedWorkouts(json)))
+            .then(({workouts}) => dispatch(savedWorkouts(workouts)))
             .catch(err => { 
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {

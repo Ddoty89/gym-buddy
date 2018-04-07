@@ -10,7 +10,7 @@ export const obtainedStats = stats => ({
 
 export const personalStats = () => {
     return dispatch => {
-    return  fetch(`${API_BASE_URL}/stats/personal-stats/`)
+    return  fetch(`${API_BASE_URL}/stats/personal-stats`)
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(({stats}) => dispatch(obtainedStats(stats)))

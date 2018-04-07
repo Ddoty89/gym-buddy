@@ -11,8 +11,8 @@ class SavedWorkouts extends React.Component {
 	render() {
 		return (
 			<div>
-				{console.log(this.props.workoutList[0])}
-			</div>
+				{console.log(this.props.workoutList[0].username)}
+			</div>	
 		)
 	}
 }
