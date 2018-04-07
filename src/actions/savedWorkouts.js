@@ -3,15 +3,16 @@ import {API_BASE_URL} from '../config';
 
 import { normalizeResponseErrors } from './utilities';
 
-export const savedWorkouts = (data) => ({
+export const savedWorkouts = (workouts) => ({
 	type: 'SAVED_WORKOUTS',
-	data
+	workouts
 })
 
 
 export const fetchWorkouts = () => {
     return dispatch => {
-        return fetch(`${API_BASE_URL}/workouts/saved`)
+        const username = localStorage.getItem('username')
+        return fetch(`${API_BASE_URL}/workouts/saved/${username}`)
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({workouts}) => dispatch(savedWorkouts(workouts)))

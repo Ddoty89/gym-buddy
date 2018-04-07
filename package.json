@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "jwt-decode": "^2.2.0",
+    "material-ui": "^0.20.0",
     "npm": "^5.8.0",
     "react": "^16.2.0",
     "react-datetime": "^2.14.0",

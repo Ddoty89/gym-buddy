@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
+import LogoutButton from './LogoutButton'
 import './NavBar.css'
 
 class NavBar extends React.Component {
 
 	render() {
+		console.log(this.props.loggedIn)
+		const isLoggedIn = this.props.loggedIn
 		return (
 			<div className='nav'>
 				<Link to='/'> 
@@ -25,10 +28,13 @@ class NavBar extends React.Component {
 					<h3 className='link'>Personal Stats</h3>
 				</Link>	
 				
-				<button onClick={() => {
-					localStorage.clear();
-					window.location = '/'
-				}}>{this.props.user.username}</button>
+				<div>
+					{isLoggedIn ? (
+						<LogoutButton />
+					) : (
+						''
+					)}
+				</div>
 
 			</div>
 		)
@@ -36,7 +42,7 @@ class NavBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	user: state.auth.currentUser || ''
-})
+	loggedIn: state.auth.currentUser !== null
+});
 
 export default connect(mapStateToProps)(NavBar)

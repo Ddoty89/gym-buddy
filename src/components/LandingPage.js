@@ -7,10 +7,10 @@ import LoginForm from './LoginForm'
 
 function LandingPage(props)  {
 	if(props.loggedIn) {
-		return <Redirect to='/dashboard' />
+		return <Redirect to='/main/stats/' />
 	}
 
-	return (
+	return ( 
 		<div className='landingPage'>
 			<h1 className='header'>Welcome to Gym Buddy</h1>
 			<LoginForm />
