@@ -4,7 +4,19 @@
 	padding:0;
 }
 
-.regButton {
+.landingPage {
+ 	width: 100%;
+}
+
+.header {
+	padding:30px;
+	text-align:center;
+}
+
+.regLink {
 	text-decoration: none;
 	color:black;
+	text-align: center;
+	display:block;
+	padding:15px;
 }

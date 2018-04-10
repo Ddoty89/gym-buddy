@@ -1,0 +1,21 @@
+* {
+	margin:0;
+}
+
+.login-form {
+	margin:auto;
+	text-align: center;
+}
+
+#username,
+#password {
+	margin:10px;
+	width:100px;
+}
+
+.loginButton {
+	width:100px;
+	color:black;
+	height:20px;
+	margin-top:5px;
+}

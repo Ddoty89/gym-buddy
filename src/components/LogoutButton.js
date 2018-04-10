@@ -3,12 +3,11 @@ import { connect } from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton';
 
 function LogoutButton(props) {
-
 	return (
 		<div>
 			<RaisedButton 
 					className='raisedButton'
-					label={props.user.username}
+					label='Logout'
 					secondary={true} 
 					onClick={() => {
 						localStorage.clear();
@@ -19,8 +18,5 @@ function LogoutButton(props) {
 	)
 }
 
-const mapStateToProps = state => ({
-	user: state.auth.currentUser || ''
-})
+export default connect()(LogoutButton)
 
-export default connect(mapStateToProps)(LogoutButton)

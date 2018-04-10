@@ -4,6 +4,8 @@ import Input from './Input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 
+import './LoginForm.css'
+
 export class LoginForm extends React.Component {
 
     onSubmit(values) {
@@ -43,7 +45,8 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button disabled={this.props.pristine || this.props.submitting}
+                    className='loginButton'>
                     Log in
                 </button>
             </form>

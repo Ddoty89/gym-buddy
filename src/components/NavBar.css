@@ -2,18 +2,22 @@
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
+
 }
 
 .nav {
-	padding: 20px;
-	border: 1px solid black;
+	border: 5px solid black;
+	height:65px;
 }
 
 .link {
-	display:inline;
-	margin:50px;
+	display:inline-block;
+	margin-left:25px;
+	margin-top: 12px;
 }
 
+
+
 .raisedButton {
-  margin: 12;
+	margin-left:60px;
 }

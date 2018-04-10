@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
 
 import { statsList } from '../actions/stats'
+import './PersonalStatsForm.css'
 
 export class PersonalStatsForm extends React.Component {
     onSubmit(values) {
@@ -12,29 +13,33 @@ export class PersonalStatsForm extends React.Component {
             .dispatch(statsList(user))
     }
 
-    render() {
+    render() { 
         return (
             <form
                 className="personal-stats"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label htmlFor="weight">Weight (lbs)</label>
-                <Field component={Input} type="number" name="weight" />
+                <label className='statsLabel' htmlFor="weight">Weight (lbs)</label>
+                <Field className='statsField' component={Input} type="number" name="weight" />
 
-                <label htmlFor="mileTime">Mile Time (minutes)</label>
-                <Field component={Input} type="text" name="mileTime" />
+                <label className='statsLabel' htmlFor="mileTime">Mile time (minutes)</label>
+                <Field className='statsField' component={Input} type="text" name="mileTime" />
 
-                <label htmlFor="goals">Goals</label>
-                <Field component={Input} type="text" name="goals" />
+                <label className='statsLabel' htmlFor="goals">Goals</label>
+                <Field className='statsField' component={Input} type="text" name="goals" />
 
-                <label htmlFor="notes">Notes</label>
-                <Field component={Input} type="text" name="notes" />
+                <label className='statsLabel'htmlFor="notes">Notes</label>
+                <Field className='statsField' component={Input} type="text" name="notes" />
 
-                <label htmlFor="date">Date</label>
-                <Field component={Input} type="text" name="date" />
+                <label className='statsLabel' htmlFor="date">Date</label>
+                <Field className='statsField' component={Input} type="text" name="date" />
 
                 <button
+                    onClick={() => {
+                        window.location = '/main/stats/'
+                    }} 
+                    className='statsSub'
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Update Stats

@@ -1,0 +1,16 @@
+* {
+	margin:0;
+}
+
+.personal-stats {
+	margin:auto;
+	text-align: center;
+	padding-top:50px;	
+}
+
+.statsSub {
+	width:120px;
+	color:black;
+	height:20px;
+	margin:15px;
+}

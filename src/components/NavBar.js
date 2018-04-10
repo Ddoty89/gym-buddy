@@ -8,7 +8,6 @@ import './NavBar.css'
 class NavBar extends React.Component {
 
 	render() {
-		console.log(this.props.loggedIn)
 		const isLoggedIn = this.props.loggedIn
 		return (
 			<div className='nav'>
@@ -28,7 +27,7 @@ class NavBar extends React.Component {
 					<h3 className='link'>Personal Stats</h3>
 				</Link>	
 				
-				<div>
+				<div className='link'> 
 					{isLoggedIn ? (
 						<LogoutButton />
 					) : (

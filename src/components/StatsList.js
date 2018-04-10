@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import {personalStats} from '../actions/stats';
+import './StatsList.css'
 
 class StatsList extends React.Component {
 	componentDidMount() {
@@ -11,11 +12,15 @@ class StatsList extends React.Component {
 	render() {
 		return (
 			<div>
+				<div className='user'>
+					The current user <span className='userNameDis'>{this.props.user.username}</span>'s most recent stats:
+				</div>
 				{this.props.stats.map((item, index) => (
-					<div key={index} className='statsList'> 
+					<div key={index} className='statsContainer'> 
 						<br/>
 						{
-						<ul>
+						<ul className='statsList'>
+							<li>Date: {item.date}</li>
 							<li>Weight: {item.weight}</li>
 							<li>Mile time: {item.mileTime}</li>
 							<li>Goals: {item.goals}</li>							
@@ -31,7 +36,8 @@ class StatsList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	stats: state.reducers.stats.stats
+	stats: state.reducers.stats.stats,
+	user: state.auth.currentUser || ''
 })
 
 export default connect(mapStateToProps)(StatsList)
