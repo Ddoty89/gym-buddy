@@ -1,10 +1,20 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
+import MenuItem from 'material-ui/MenuItem'
+import {
+  Checkbox,
+  RadioButtonGroup,
+  SelectField,
+  TextField,
+  Toggle,
+  DatePicker
+} from 'redux-form-material-ui'
 
 import { storeExercise, equipment } from '../actions/equipment'
 import ListOfExercises from './ListOfExercises'
 import MuscleGroup from './MuscleGroup'
+import './EquipmentForm.css'
 
 export class EquipmentForm extends React.Component {
     componentDidMount() {
@@ -56,6 +66,7 @@ export class EquipmentForm extends React.Component {
                     <Field component={Input} type="text" name="notes" />
 
                     <button
+                        className='equipmentAddButton'
                         type="submit"
                         disabled={this.props.pristine || this.props.submitting}>
                         Add Exercise

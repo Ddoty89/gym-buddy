@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 
 import {muscleGroupList} from '../actions/muscleGroups'
 import PossibleEquipment from './PossibleEquipment'
+import './MuscleGroupForm.css'
 
 export class MuscleGroupForm extends React.Component {
     componentDidMount() {

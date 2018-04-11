@@ -11,12 +11,12 @@ class SavedWorkouts extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className='savedWorkoutList'>
 				{this.props.workoutList.map((item, index) => (
-					<div key={index}>{item.workoutTitle}{item.exerciseList.map((item, index) => (
+					<div  key={index}>{item.workoutTitle}{item.exerciseList.map((item, index) => (
 						<div key={index}>
 							<ul>
-								<li>{item.equipment}</li>
+								< li>{item.equipment}</li>
 								<li>{item.sets}</li>
 								<li>{item.repetitions}</li>
 								<li>{item.weight}</li>
