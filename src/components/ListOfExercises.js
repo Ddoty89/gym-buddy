@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { TextField } from 'redux-form-material-ui'
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { addWorkout } from '../actions/equipment'
 import './ListOfExercises.css'
@@ -18,18 +19,22 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     addToWorkoutDB(title, exercises)
                     e.target.title.value = '';
             }}>
-                <label htmlFor='title'>Name your workout:</label>
-                <input type='text' name='title'/>
-                <button
+                <TextField hintText='Name your workout'/>
+                <RaisedButton 
                     onClick={() => {
                         window.location = '/main/equipment'
                     }}  
-                    className='saveWorkout'>Save Workout</button>
+                    className='saveWorkout' label="Save Workout" />
             </form>
         <div className='linkContainer'>
-            <Link to='/saved-workouts'>
-                <h5 className='savedWorkoutLink'>Your saved workouts</h5>
-            </Link>
+            <RaisedButton 
+                className='savedWorkoutLink' 
+                label="Your saved workouts"
+                default={true}
+                onClick={() => {
+                    window.location = '/saved-workouts'
+                }}
+            />
 
         </div>
 

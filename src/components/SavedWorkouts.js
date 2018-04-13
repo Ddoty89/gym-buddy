@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import { fetchWorkouts } from '../actions/savedWorkouts'
+import './SavedWorkouts.css'
 
 class SavedWorkouts extends React.Component {
 	componentDidMount(){
@@ -11,21 +12,24 @@ class SavedWorkouts extends React.Component {
 
 	render() {
 		return (
-			<div className='savedWorkoutList'>
-				{this.props.workoutList.map((item, index) => (
-					<div  key={index}>{item.workoutTitle}{item.exerciseList.map((item, index) => (
-						<div key={index}>
-							<ul>
-								< li>{item.equipment}</li>
-								<li>{item.sets}</li>
-								<li>{item.repetitions}</li>
-								<li>{item.weight}</li>
-								<li>{item.notes}</li>
-							</ul>
+			<div>
+				<div className='savedWorkoutList'>
+					{this.props.workoutList.map((item, index) => (
+						<div  className='individualWorkout' key={index}><span className='workoutTitle'>{item.workoutTitle}</span>{item.exerciseList.map((item, index) => (
+							<div key={index}>
+							<br/>
+								<ul className='workoutContainer'>
+									<li>Equipment: {item.equipment}</li>
+									<li>Sets: {item.sets}</li>
+									<li>Reps: {item.repetitions}</li>
+									<li>Weight: {item.weight}</li>
+									<li>Notes: {item.notes}</li>
+								</ul>
+							</div>
+						))}
 						</div>
 					))}
-					</div>
-				))}
+				</div>
 			</div>	
 		)
 	}

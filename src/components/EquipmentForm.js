@@ -1,15 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './Input';
 import MenuItem from 'material-ui/MenuItem'
-import {
-  Checkbox,
-  RadioButtonGroup,
-  SelectField,
-  TextField,
-  Toggle,
-  DatePicker
-} from 'redux-form-material-ui'
+import { SelectField, TextField } from 'redux-form-material-ui'
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { storeExercise, equipment } from '../actions/equipment'
 import ListOfExercises from './ListOfExercises'
@@ -38,14 +31,13 @@ export class EquipmentForm extends React.Component {
                     )}>
                     <label htmlFor="equipment">Equipment</label>
                         <div>
-                            <Field component='select' type="select" name="equipment" >
-                                <option></option>
-                                <option>Barbell Squats</option>
-                                <option>Bench Press</option>
-                                <option>Dumbell Curl</option>
-                                <option>Gym Mat - Crunch</option>
-                                <option>Incline Bench Press</option>
-                                <option>Pull-up Bar</option>
+                            <Field component={SelectField} name="equipment" hintText='Select equipment'>
+                                <MenuItem value='Barbell Squats' primaryText='Barbell Squats' />
+                                <MenuItem value='Bench Press' primaryText='Bench Press' />
+                                <MenuItem value='Dumbell Curl' primaryText='Dumbell Curl'/>
+                                <MenuItem value='Gym Mat - Crunch' primaryText='Gym Mat - Crunch' />
+                                <MenuItem value='Incline Bench Press' primaryText='Incline Bench Press' />
+                                <MenuItem value='Pull-up Bar' primaryText='Pull-up Bar' />
                             </Field>
                         </div>
                     <br/>
@@ -53,24 +45,21 @@ export class EquipmentForm extends React.Component {
                     <MuscleGroup />
                     <br/>
 
-                    <label htmlFor="sets">Sets</label>
-                    <Field component={Input} type="text" name="sets" />
+                    <Field component={TextField} name="sets" hintText='Sets'/><br/>
 
-                    <label htmlFor="repetitions">Repetitions</label>
-                    <Field component={Input} type="text" name="repetitions" />
+                    <Field component={TextField} name="repetitions" hintText='Repetitions'/><br/>
 
-                    <label htmlFor="weight">Weight</label>
-                    <Field component={Input} type="text" name="weight" />
+                    <Field component={TextField} name="weight" hintText='Weight'/><br/>
 
-                    <label htmlFor="notes">Notes</label>
-                    <Field component={Input} type="text" name="notes" />
+                    <Field component={TextField} name="notes" hintText='Notes'/><br/>
 
-                    <button
+                    <RaisedButton
                         className='equipmentAddButton'
-                        type="submit"
-                        disabled={this.props.pristine || this.props.submitting}>
-                        Add Exercise
-                    </button>
+                        type='submit'
+                        label='Add Exercise'
+                        disabled={this.props.pristine || this.props.submitting}
+                        primary={true}
+                    />
                 </form>
 
             <ListOfExercises />

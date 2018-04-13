@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 function MuscleGroup({workedMuscles, equipmentSelected}) {
 	return (
 		<div>
-			<label>Muscle Group: {workedMuscles[equipmentSelected.equipment]}</label>
+			<label>Muscle Group(s): {workedMuscles[equipmentSelected.equipment]}</label>
 		</div>
 	)
 }

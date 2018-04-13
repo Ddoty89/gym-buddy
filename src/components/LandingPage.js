@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import RaisedButton from 'material-ui/RaisedButton';
 
 import './LandingPage.css';
 import LoginForm from './LoginForm'
@@ -15,7 +16,14 @@ function LandingPage(props)  {
 			<h1 className='header'>Welcome to Gym Buddy</h1>
 			<LoginForm />
 			<div className='reg'>
-				<Link className='regLink' to='/register'>Register</Link>
+				<RaisedButton 
+					className='regLink' 
+					label="Register"
+		        	default={true}
+		        	onClick={() => {
+		        		window.location = '/register'
+		        	}}
+	        	/>
 			</div>
 		</div>
 	)

@@ -10,6 +10,7 @@ import PersonalStats from './components/PersonalStats';
 import Register from './components/Register';
 import SavedWorkouts from './components/SavedWorkouts'
 import { refreshAuthToken } from './actions/auth';
+import './App.css';
 
 
 export class App extends React.Component {

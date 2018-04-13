@@ -2,22 +2,15 @@
 	margin:0;
 	padding:0;
 	box-sizing:border-box;
-
 }
 
 .nav {
-	border: 5px solid black;
-	height:65px;
+	height: 55px;
+	width:100%;
+	display: inline-block;
+	margin:auto;
 }
 
-.link {
-	display:inline-block;
-	margin-left:25px;
-	margin-top: 12px;
-}
-
-
-
-.raisedButton {
-	margin-left:60px;
+.logoutButton {
+	float:right;
 }

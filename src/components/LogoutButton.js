@@ -6,9 +6,9 @@ function LogoutButton(props) {
 	return (
 		<div>
 			<RaisedButton 
-					className='raisedButton'
+					className='raisedButtonLogout'
 					label='Logout'
-					secondary={true} 
+					default={true} 
 					onClick={() => {
 						localStorage.clear();
 						window.location = '/'

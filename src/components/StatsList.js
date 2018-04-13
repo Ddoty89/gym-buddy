@@ -20,7 +20,7 @@ class StatsList extends React.Component {
 						<br/>
 						{
 						<ul className='statsList'>
-							<li>Date: {item.date}</li>
+							<li>Date: {item.date.slice(0,10)}</li>
 							<li>Weight: {item.weight}</li>
 							<li>Mile time: {item.mileTime}</li>
 							<li>Goals: {item.goals}</li>							
@@ -32,7 +32,7 @@ class StatsList extends React.Component {
 				))}
 			</div>
 		)
-	}
+	} 
 }
 
 const mapStateToProps = state => ({

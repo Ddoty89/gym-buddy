@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './Input';
+import { TextField,  DatePicker } from 'redux-form-material-ui'
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { statsList } from '../actions/stats'
 import './PersonalStatsForm.css'
@@ -20,30 +21,34 @@ export class PersonalStatsForm extends React.Component {
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-                <label className='statsLabel' htmlFor="weight">Weight (lbs)</label>
-                <Field className='statsField' component={Input} type="number" name="weight" />
+                
+                <Field  component={TextField} name="weight" hintText='Weight (lbs)'/><br/>
 
-                <label className='statsLabel' htmlFor="mileTime">Mile time (minutes)</label>
-                <Field className='statsField' component={Input} type="text" name="mileTime" />
+                <Field  component={TextField} name="mileTime" hintText='Mile time (minutes)'/><br/>
 
-                <label className='statsLabel' htmlFor="goals">Goals</label>
-                <Field className='statsField' component={Input} type="text" name="goals" />
+                <Field  component={TextField} name="goals" hintText='Goals'/><br/>
 
-                <label className='statsLabel'htmlFor="notes">Notes</label>
-                <Field className='statsField' component={Input} type="text" name="notes" />
+                <Field  component={TextField} name="notes" hintText='Notes'/><br/>
 
-                <label className='statsLabel' htmlFor="date">Date</label>
-                <Field className='statsField' component={Input} type="text" name="date" />
+                <Field  
+                    component={DatePicker} 
+                    autoOk={true} 
+                    name='date' 
+                    mode="landscape" 
+                    hintText='Date'
+                />
+                <br/>
 
-                <button
+                <RaisedButton
                     onClick={() => {
                         window.location = '/main/stats/'
                     }} 
+                    label='Update Stats'
                     className='statsSub'
                     type="submit"
-                    disabled={this.props.pristine || this.props.submitting}>
-                    Update Stats
-                </button>
+                    disabled={this.props.pristine || this.props.submitting}
+                    primary={true}
+                />
             </form>
         );
     }

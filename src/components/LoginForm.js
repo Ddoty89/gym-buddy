@@ -1,8 +1,9 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './Input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
+import { TextField } from 'redux-form-material-ui'
+import RaisedButton from 'material-ui/RaisedButton';
 
 import './LoginForm.css'
 
@@ -29,26 +30,30 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="username">Username</label>
                 <Field 
-                    component={Input}
+                    component={TextField}
                     type="text"
                     name="username"
-                    id="username"
+                    className="username"
+                    hintText='username'
+                    autoComplete='username'
                     validate={[required, nonEmpty]}
                 />
-                <label htmlFor="password">Password</label>
                 <Field
-                    component={Input}
+                    component={TextField}
                     type="password"
                     name="password"
-                    id="password"
+                    className="password"
+                    hintText='password'
+                    autoComplete='current-password'
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}
-                    className='loginButton'>
-                    Log in
-                </button>
+                <RaisedButton 
+                    type='submit'
+                    disabled={this.props.pristine || this.props.submitting}
+                    className='loginButton'
+                    label='Log in'
+                />
             </form>
         );
     }

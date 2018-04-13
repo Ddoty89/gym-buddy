@@ -6,6 +6,7 @@
 
 .landingPage {
  	width: 100%;
+ 	text-align: center;
 }
 
 .header {
@@ -14,9 +15,5 @@
 }
 
 .regLink {
-	text-decoration: none;
-	color:black;
-	text-align: center;
-	display:block;
-	padding:15px;
+	margin-top: 15px;
 }
