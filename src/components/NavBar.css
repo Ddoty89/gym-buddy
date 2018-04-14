@@ -5,12 +5,19 @@
 }
 
 .nav {
-	height: 55px;
+	height: 60px;
 	width:100%;
 	display: inline-block;
 	margin:auto;
+	background-color: rgb(0, 188, 212);
+	padding:12px 25px;
+}
+
+.menu {
+	margin-left:20px;
 }
 
 .logoutButton {
 	float:right;
+	/*margin-right:20px;*/
 }

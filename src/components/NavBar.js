@@ -23,14 +23,6 @@ class NavBar extends React.Component {
 	render() {
 		const isLoggedIn = this.props.loggedIn
 		const actions = [
-			<FlatButton
-				className='menuLink'
-	        	label="Home"
-	        	primary={true}
-	        	onClick={() => {
-	        		window.location = '/'
-	        	}}
-	      	/>,
 	      	<FlatButton
 	      		className='menuLink'
 	        	label="Muscle Groups"
@@ -56,7 +48,6 @@ class NavBar extends React.Component {
 	        	}}
 	      	/>
 	    ];
-
 		return (
 			<div className='nav'>
 				{isLoggedIn ? (
@@ -81,9 +72,7 @@ class NavBar extends React.Component {
 						''
 					)}
 				</div>
-
 			</div>
-
 		)
 	}
 }
