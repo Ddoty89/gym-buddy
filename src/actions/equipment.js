@@ -39,6 +39,7 @@ export const equipment = () => {
 
 export const addWorkout = (workoutTitle, exerciseList) => {
     return dispatch => {
+        console.log(workoutTitle, exerciseList)
         let username = localStorage.getItem('username')
         fetch(`${API_BASE_URL}/workouts/saved`, {
             method: 'POST',

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import EquipmentForm from './EquipmentForm'
+import EquipmentBackgroundImage from './EquipmentBackgroundImage'
 
 class SearchEquipment extends React.Component {
 
@@ -9,7 +10,7 @@ class SearchEquipment extends React.Component {
 		return (
 			<div>
 				<EquipmentForm />
-
+				<EquipmentBackgroundImage />
 			</div>
 		)
 	}

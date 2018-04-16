@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import { TextField,  DatePicker } from 'redux-form-material-ui'
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from 'material-ui/RaisedButton'; 
 
 import { statsList } from '../actions/stats'
 import './PersonalStatsForm.css'
@@ -32,12 +32,10 @@ export class PersonalStatsForm extends React.Component {
 
                 <Field  
                     component={DatePicker} 
-                    autoOk={true} 
                     name='date' 
                     mode="landscape" 
                     hintText='Date'
                 />
-                <br/>
 
                 <RaisedButton
                     onClick={() => {

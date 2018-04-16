@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import RegistrationForm from './RegistrationForm'
+import RegisterBackground from './RegisterBackground'
+import './Register.css';
 
 export function Register(props) {
 
@@ -11,10 +13,10 @@ export function Register(props) {
 	}
 
 	return (
-		<div>
-			<h2>Register for an account with Gym Buddy</h2>
+		<div className='regPage'>
+			<h2 className='regHeader'>Register for an account with Gym Buddy</h2>
 			<RegistrationForm />
-			<Link to='/'>Login</Link>
+			<RegisterBackground />
 		</div>
 	);
 };

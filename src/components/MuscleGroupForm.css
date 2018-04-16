@@ -1,3 +1,16 @@
+.muscleSearch {
+	text-align: center;
+	background-color:white;
+	width:430px;
+	padding:10px;
+	border-radius:5px;
+	opacity:1;
+}
+
+.info {
+	margin-bottom:15px;
+}
+
 .muscleGroups {
 	margin:auto;
 	text-align: center;

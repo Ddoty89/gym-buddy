@@ -1,22 +1,3 @@
-.savedWorkoutList { 
-	/*border:1px solid black;*/
-	margin: 30px;
-	
-
-}
-
-.individualWorkout {
-	border:1px solid black;	
-	border-radius: 3px;
-	width:200px;
-	height:300px;
-	overflow: scroll;
-	text-align: center; 
-	margin:auto;
-	margin:10px;
-	display: inline-block;
-}
-
-.workoutContainer li {
-	list-style-type: none;
+.workoutList {
+	text-align: center;
 }

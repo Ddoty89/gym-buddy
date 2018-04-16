@@ -2,7 +2,8 @@
 	margin:auto;
 	padding-top:30px;
 	text-align: center;
-	width:200px;
+	background-color:white;
+	width:300px;
 }
 
 .saveWorkout {
@@ -12,13 +13,11 @@
 
 .linkContainer {
 	width:220px;
-	margin:auto;
 	padding-top:20px;
 }
 
 .savedWorkoutLink {
-	color:black;
-	text-align: center;
+	margin-bottom: 15px;
 }
 
 .exercise {
@@ -29,6 +28,6 @@
 	border-radius:5px;
 }
 
-.exercise li {
-	list-style-type: none;
+.exercisesToBeAdded {
+	text-align: center;
 }

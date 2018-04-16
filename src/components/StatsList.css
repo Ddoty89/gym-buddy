@@ -2,28 +2,12 @@
 	max-width: 1000px;
 }
 
-.user {
-	margin-left:15px;
-}
-
 .userNameDis {
 	text-decoration: underline;
 }
 
-.statsContainer {
-	width:200px;
-	margin:15px;
-	display: inline-block;
-}
-
-.statsList {
-	border:1px solid black;
-	border-radius: 3px;
+.list {
 	text-align: center;
-	height:100px;
+	background-color:white;
+	width:300px;
 }
-
-.statsList li {
-	list-style-type: none;
-}
-

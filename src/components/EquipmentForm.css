@@ -1,6 +1,8 @@
 .addEquipment {
 	text-align: center;
 	margin:auto;
+	background-color:white;
+	width:300px;
 }
 
 .equipmentAddButton {

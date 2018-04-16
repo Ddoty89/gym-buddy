@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { TextField } from 'redux-form-material-ui'
 import RaisedButton from 'material-ui/RaisedButton';
+import {List, ListItem} from 'material-ui/List';
 
 import { addWorkout } from '../actions/equipment'
 import './ListOfExercises.css'
@@ -16,20 +17,23 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                 onSubmit={e => {
                     e.preventDefault();
                     let title = e.target.title.value
+                    console.log(title, exercises)
                     addToWorkoutDB(title, exercises)
-                    e.target.title.value = '';
             }}>
-                <TextField hintText='Name your workout'/>
+                <TextField hintText='Name your workout' name='title' />
                 <RaisedButton 
                     onClick={() => {
                         window.location = '/main/equipment'
                     }}  
-                    className='saveWorkout' label="Save Workout" />
+                    className='saveWorkout'
+                    label="Save Workout" 
+                    type='submit'
+                />
             </form>
         <div className='linkContainer'>
             <RaisedButton 
                 className='savedWorkoutLink' 
-                label="Your saved workouts"
+                label="Your saved workouts" 
                 default={true}
                 onClick={() => {
                     window.location = '/saved-workouts'
@@ -39,17 +43,21 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
         </div>
 
         </div>
-            <div className='exercisesToBeAdded'>
+            <List className='exercisesToBeAdded'>
                 {exercises.map((exercises, index) => (
-                    <ul key={index} className='exercise'>
-                        <li>{exercises.equipment}</li>
-                        <li>{exercises.sets}</li>
-                        <li>{exercises.repetitions}</li>
-                        <li>{exercises.weight}</li>
-                        <li>{exercises.notes}</li>
-                    </ul>
+                    <ListItem 
+                        key={index}
+                        primaryText={exercises.equipment} 
+                        className='exercise'
+                        nestedItems={[
+                            <ListItem key={index} primaryText={exercises.sets} />,
+                            <ListItem key={index} primaryText={exercises.repetitions} />,
+                            <ListItem key={index} primaryText={exercises.weight} />,
+                            <ListItem key={index} primaryText={exercises.notes} />
+                        ]}
+                    />
                 ))}
-            </div>
+            </List>
         </div>
     )
 }
