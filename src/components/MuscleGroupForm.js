@@ -16,8 +16,8 @@ export class MuscleGroupForm extends React.Component {
     render() {
         return (
             <div className='muscleSearch'> 
-                <h4 className='info'>If you're new to the gym and unsure what equipment to use, select a body part for a corresponding equiment</h4>
-                <h4 className='info'>For more specific muscle groups, look for the corresponding equipment in the Create Workout page</h4>
+                <p className='info'>If you're new to the gym and unsure what equipment to use, select a body part for a corresponding equiment</p>
+                <p className='info'>For more specific muscle groups, look for the corresponding equipment in the Create Workout page</p>
                 <form
                     className="muscleGroups">
                     <label htmlFor="muscleGroups">Select muscle group</label>

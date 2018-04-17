@@ -19,14 +19,25 @@ class SavedWorkouts extends React.Component {
 					List of saved workouts
 				</Subheader>
 				{this.props.workoutList.map((savedWorkout, index) => (
-					savedWorkout.exerciseList.map((item, index) => (
+					
 						<ListItem  
 							className='individualWorkout' 
-							key={index}
+							key={index} 
 							primaryText={savedWorkout.workoutTitle}
-							secondaryText={`${item.equipment} ${item.sets} ${item.repetitions} ${item.weight} ${item.notes}`}
+							nestedItems={savedWorkout.exerciseList.map((item, index) => (
+								<ListItem 
+									key={index} 
+									primaryText={item.equipment}
+									open={true}
+									nestedItems={[
+										<ListItem key={index} primaryText={item.sets} />,
+										<ListItem key={index} primaryText={item.repetitions} />,
+										<ListItem key={index} primaryText={item.weight} />,
+										<ListItem key={index} primaryText={item.notes} />
+									]}
+								/>
+							))}
 						/>
-					))
 				))}
 			</List>
 
