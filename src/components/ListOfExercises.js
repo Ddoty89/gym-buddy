@@ -22,9 +22,7 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
             }}>
                 <TextField hintText='Name your workout' name='title' />
                 <RaisedButton 
-                    onClick={() => {
-                        window.location = '/main/equipment'
-                    }}  
+                    
                     className='saveWorkout'
                     label="Save Workout" 
                     type='submit'
