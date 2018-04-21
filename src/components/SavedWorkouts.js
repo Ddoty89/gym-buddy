@@ -8,8 +8,7 @@ import './SavedWorkouts.css'
 
 class SavedWorkouts extends React.Component {
 	componentDidMount(){
-		this.props.dispatch(fetchWorkouts())
-		
+		this.props.dispatch(fetchWorkouts())		
 	}
 
 	render() {
