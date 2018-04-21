@@ -21,11 +21,13 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     addToWorkoutDB(title, exercises)
             }}>
                 <TextField hintText='Name your workout' name='title' />
-                <RaisedButton 
-                    
+                <RaisedButton   
                     className='saveWorkout'
                     label="Save Workout" 
                     type='submit'
+                    onClick={() => {
+                        window.location = '/main/equipment'
+                    }}
                 />
             </form>
         <div className='linkContainer'>
