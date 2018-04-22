@@ -36,7 +36,7 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                 label="Your saved workouts" 
                 default={true}
                 onClick={() => {
-                    window.location = '/saved-workouts'
+                    window.location = '/saved-workouts';
                 }}
             />
 
