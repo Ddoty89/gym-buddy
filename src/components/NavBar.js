@@ -48,12 +48,13 @@ class NavBar extends React.Component {
 	        	}}
 	      	/>
 	    ];
+
 		return (
 			<div className='nav'>
 				{isLoggedIn ? (
-					<RaisedButton icon={<i className='material-icons'>menu </i>} onClick={this.handleOpen} />
+					<RaisedButton className='menuButton' icon={<i className='material-icons'>menu </i>} onClick={this.handleOpen} />
 				) : (
-					''
+					<div className='spacerDiv'> </div>
 				)}
 		    	<Dialog
 		    		className='menu'
@@ -65,10 +66,10 @@ class NavBar extends React.Component {
 		        >
 		         Navigate anywhere in Gym Buddy
     			</Dialog>
-    			<div className='title'>
-    				<h1 className='titleContent'>Gym Buddy</h1>
+
+    				<h1 className='title'>Gym Buddy</h1>
     				<h2 className='titleContent'>- Your best workout partner</h2>
-    			</div>
+
 				<div className='logoutButton'> 
 					{isLoggedIn ? (
 						<LogoutButton />
