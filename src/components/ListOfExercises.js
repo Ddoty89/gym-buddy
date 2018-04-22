@@ -26,7 +26,7 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     label="Save Workout" 
                     type='submit'
                     onClick={() => {
-                        window.location = '/main/equipment'
+                        window.location = '/main/equipment';
                     }}
                 />
             </form>
@@ -36,7 +36,7 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                 label="Your saved workouts" 
                 default={true}
                 onClick={() => {
-                    window.location = '/saved-workouts';
+                    window.location = '/saved-workouts'
                 }}
             />
 
