@@ -29,6 +29,7 @@ export class EquipmentForm extends React.Component {
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
+                    <h3>Add exercises to a list for a complete workout!</h3>
                     <label htmlFor="equipment">Equipment</label>
                         <div>
                             <Field component={SelectField} name="equipment" hintText='Select equipment'>

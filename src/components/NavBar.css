@@ -4,6 +4,14 @@
 	box-sizing:border-box;
 }
 
+.title {
+	text-align: center;
+}
+
+.titleContent {
+	display:inline;
+}
+
 .nav {
 	height: 60px;
 	width:100%;

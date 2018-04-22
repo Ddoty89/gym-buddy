@@ -9,7 +9,7 @@ import './Register.css';
 export function Register(props) {
 
 	if(props.loggedIn) {
-		return <Redirect to='/dashboard' />;
+		return <Redirect to='/main/stats' />;
 	}
 
 	return (

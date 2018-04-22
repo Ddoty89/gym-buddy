@@ -65,6 +65,10 @@ class NavBar extends React.Component {
 		        >
 		         Navigate anywhere in Gym Buddy
     			</Dialog>
+    			<div className='title'>
+    				<h1 className='titleContent'>Gym Buddy</h1>
+    				<h2 className='titleContent'>- Your best workout partner</h2>
+    			</div>
 				<div className='logoutButton'> 
 					{isLoggedIn ? (
 						<LogoutButton />
