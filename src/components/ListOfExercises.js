@@ -27,7 +27,7 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     type='submit'
                     onClick={setTimeout(() => {
                         window.location = '/main/equipment'
-                    }, 100)}
+                    },200)}
                 />
             </form>
         <div className='linkContainer'>
