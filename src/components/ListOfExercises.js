@@ -25,9 +25,9 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     className='saveWorkout'
                     label="Save Workout" 
                     type='submit'
-                    onClick={() => {
+                    onClick={setTimeout(() => {
                         window.location = '/main/equipment'
-                    }}
+                    }, 100)}
                 />
             </form>
         <div className='linkContainer'>
