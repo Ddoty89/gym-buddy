@@ -17,7 +17,7 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                 onSubmit={e => {
                     e.preventDefault();
                     let title = e.target.title.value
-                    console.log(title, exercises)
+
                     addToWorkoutDB(title, exercises)
             }}>
                 <TextField hintText='Name your workout' name='title' />
@@ -25,9 +25,6 @@ function ListOfExercises({exercises, addToWorkoutDB}) {
                     className='saveWorkout'
                     label="Save Workout" 
                     type='submit'
-                    onClick={() => {
-                        window.location.reload();
-                    }}
                 />
             </form>
         <div className='linkContainer'>
