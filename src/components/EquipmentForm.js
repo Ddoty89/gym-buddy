@@ -86,7 +86,7 @@ export class EquipmentForm extends React.Component {
                     />
                 </form>
 
-            <ListOfExercises />
+            <ListOfExercises listOfTitles={() => this.listOfTitles([])} listOfExercises={() => this.listOfExercises([])} />
 
             </div> 
         );
