@@ -5,6 +5,10 @@ import MenuItem from 'material-ui/MenuItem'
 import { SelectField, TextField } from 'redux-form-material-ui'
 import RaisedButton from 'material-ui/RaisedButton';
 
+
+import DatePicker from 'material-ui/DatePicker';
+
+
 import { storeExercise, equipment } from '../actions/equipment'
 import ListOfExercises from './ListOfExercises'
 import MuscleGroup from './MuscleGroup'
@@ -55,6 +59,14 @@ export class EquipmentForm extends React.Component {
                         hintText='Sets'
                         validate={[required, nonEmpty, isTrimmed]}
                     />
+
+                    <div>
+                        <DatePicker 
+                            hintText="Landscape Dialog" 
+                            style={{display:"block", background:"red"}}
+                            hideCalendarDate={false}
+                        />
+                    </div>
 
                     <Field 
                         component={TextField} 
