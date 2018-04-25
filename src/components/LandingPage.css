@@ -5,11 +5,12 @@
 }
 
 .landingPage {
-	margin-top:13px;
+	margin-top:20px;
  	text-align: center;
  	width:350px;
  	background-color:white;
  	opacity: .9;
+ 	border-radius: 5px;
 }
 
 .header {

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import RaisedButton from 'material-ui/RaisedButton';
-import BackgroundVideo from './BackgroundVideo';
+import LandingPageBackground from './LandingPageBackground';
 
 import './LandingPage.css';
 import LoginForm from './LoginForm'
@@ -28,7 +28,7 @@ function LandingPage(props)  {
 		        	/>
 				</div>
 			</div>
-			<BackgroundVideo />
+			<LandingPageBackground />
 		</div>
 	)
 }

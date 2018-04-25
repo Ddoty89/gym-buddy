@@ -1,8 +1,15 @@
+.equipmentHeader {
+	color:white;
+	text-align: center;
+	margin:20px;
+}
+
 .addEquipment {
 	text-align: center;
 	margin:auto;
 	background-color:white;
 	width:300px;
+	border-radius: 5px;
 }
 
 .equipmentAddButton {

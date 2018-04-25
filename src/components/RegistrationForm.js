@@ -32,10 +32,18 @@ export class RegistrationForm extends React.Component {
 
                     <Field component={TextField} name="email" hintText="Email" /><br/>
 
-                    <Field component={TextField} name="height" hintText="Height" /><br/>
-
-                    <Field component={TextField} name="gender" hintText="Gender" /><br/>
-
+                    <Field 
+                        component={TextField} 
+                        name="height" 
+                        hintText="Height"
+                        validate={[required, nonEmpty, isTrimmed]}
+                    />
+                    <Field 
+                        component={TextField} 
+                        name="gender" 
+                        hintText="Gender"
+                        validate={[required, nonEmpty, isTrimmed]} 
+                    />
                     <Field
                         component={TextField}
                         name="username"
@@ -46,12 +54,14 @@ export class RegistrationForm extends React.Component {
                         component={TextField}
                         hintText="Password"
                         name="password"
+                        type='password'
                         validate={[required, passwordLength, isTrimmed]}
                     />
                     <Field
                         component={TextField}
                         hintText="Password Confirm"
                         name="passwordConfirm"
+                        type='password'
                         validate={[required, nonEmpty, matchesPassword]}
                     />
                     <RaisedButton

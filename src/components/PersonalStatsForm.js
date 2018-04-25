@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import { TextField,  DatePicker } from 'redux-form-material-ui'
-import RaisedButton from 'material-ui/RaisedButton'; 
+import { TextField, DatePicker } from 'redux-form-material-ui'
+import RaisedButton from 'material-ui/RaisedButton';
 
 import { statsList } from '../actions/stats'
 import './PersonalStatsForm.css'
@@ -15,6 +15,7 @@ export class PersonalStatsForm extends React.Component {
     }
 
     render() { 
+        console.log(DatePicker)
         return (
             <form
                 className="personal-stats"
@@ -22,19 +23,20 @@ export class PersonalStatsForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 
-                <Field  component={TextField} name="weight" hintText='Weight (lbs)'/><br/>
+                <Field  component={TextField} name="weight" hintText='Weight (lbs)'/>
 
-                <Field  component={TextField} name="mileTime" hintText='Mile time (minutes)'/><br/>
+                <Field  component={TextField} name="mileTime" hintText='Mile time (minutes)'/>
 
-                <Field  component={TextField} name="goals" hintText='Goals'/><br/>
+                <Field  component={TextField} name="goals" hintText='Goals'/>
 
-                <Field  component={TextField} name="notes" hintText='Notes'/><br/>
+                <Field  component={TextField} name="notes" hintText='Notes'/>
 
                 <Field  
-                    component={DatePicker} 
+                    component={DatePicker}
                     name='date' 
                     mode="landscape" 
                     hintText='Date'
+
                 />
 
                 <RaisedButton
