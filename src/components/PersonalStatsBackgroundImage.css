@@ -9,3 +9,9 @@
 	z-index: -1;
 	opacity: .3;
 }
+
+@media only screen and (max-width: 500px) {
+	.statsBackgroundImage {
+		display:none;
+	}
+}

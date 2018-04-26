@@ -9,3 +9,9 @@
 	z-index: -1;
 	opacity: .8;
 }
+
+@media only screen and (max-width: 500px) {
+	.registerBackground {
+		display:none;
+	}
+}
