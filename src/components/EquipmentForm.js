@@ -60,14 +60,6 @@ export class EquipmentForm extends React.Component {
                         validate={[required, nonEmpty, isTrimmed]}
                     />
 
-                    <div>
-                        <DatePicker 
-                            hintText="Landscape Dialog" 
-                            style={{display:"block", background:"red"}}
-                            hideCalendarDate={false}
-                        />
-                    </div>
-
                     <Field 
                         component={TextField} 
                         name="repetitions" 

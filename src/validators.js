@@ -15,3 +15,18 @@ export const matches = field => (value, allValues) =>
     field in allValues && value.trim() === allValues[field].trim()
         ? undefined
         : 'Does not match';
+
+export const dateLength = length => value => {
+    if (length.min && value.length < length.min) {
+        return `Must be at least ${length.min} characters long including /`;
+    }
+    if (length.max && value.length > length.max) {
+        return `Must be at most ${length.max} characters long including /`;
+    }
+};
+
+export const correctCharaters = value => {
+    if(!value.includes('/') || !value.includes('/',3)) {
+        return `Date must be in correct format DD/MM/YY`;
+    }
+}

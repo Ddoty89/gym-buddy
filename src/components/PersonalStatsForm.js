@@ -2,10 +2,13 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import { TextField, DatePicker } from 'redux-form-material-ui'
 import RaisedButton from 'material-ui/RaisedButton';
+import { required, nonEmpty, dateLength, correctCharaters } from '../validators'
 
 import StatsList from './StatsList'
 import { statsList } from '../actions/stats'
 import './PersonalStatsForm.css'
+
+const date = dateLength({min: 6, max: 8});
 
 export class PersonalStatsForm extends React.Component {
     onSubmit(values) {
@@ -49,13 +52,10 @@ export class PersonalStatsForm extends React.Component {
                     />
 
                     <Field  
-                        component={DatePicker}
-                        name='date' 
-                        mode="landscape" 
-                        hintText='Date'
-                        className='date'
-                        disabled={true}
-                        format={v => (v === '' || v === undefined ? new Date() : new Date(v))}
+                        component={TextField}
+                        name='dateLength' 
+                        floatingLabelText="DD/MM/YY"
+                        validate={[required, nonEmpty, date, correctCharaters]}
                     />
 
                     <RaisedButton                        
@@ -64,6 +64,9 @@ export class PersonalStatsForm extends React.Component {
                         type="submit"
                         disabled={this.props.pristine || this.props.submitting}
                         primary={true}
+                        onClick={() => {
+                            window.location='/main/stats'
+                        }}
                     />
                 </form>
                 <StatsList />

@@ -26,11 +26,11 @@ export class RegistrationForm extends React.Component {
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
                     )}>
-                    <Field component={TextField} name="firstName" className='firstName' hintText="First Name" /><br/>
+                    <Field component={TextField} name="firstName" className='firstName' hintText="First Name" />
 
-                    <Field component={TextField} name="lastName" hintText="Last Name" /><br/>
+                    <Field component={TextField} name="lastName" hintText="Last Name" />
 
-                    <Field component={TextField} name="email" hintText="Email" /><br/>
+                    <Field component={TextField} name="email" hintText="Email" />
 
                     <Field 
                         component={TextField} 

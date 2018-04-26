@@ -53,7 +53,6 @@ export class App extends React.Component {
 				<Route exact path='/main/stats/' component={PersonalStats} />
 				<Route exact path='/saved-workouts' component={SavedWorkouts} />
 			</div>
-	
 		)
 	}
 }
