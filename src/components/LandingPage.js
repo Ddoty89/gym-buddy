@@ -18,7 +18,7 @@ function LandingPage(props)  {
 				<h1 className='header'>Welcome to Gym Buddy</h1>
 				<p>Demo username: demo123456</p>
 				<p>Demo password: demo123456</p>
-				<LoginForm />
+				<LoginForm /> 
 				<div className='reg'>
 					<RaisedButton 
 						className='regLink' 
