@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import { TextField, DatePicker } from 'redux-form-material-ui'
+import { TextField } from 'redux-form-material-ui'
 import RaisedButton from 'material-ui/RaisedButton';
 import { required, nonEmpty, dateLength, correctCharaters } from '../validators'
 
